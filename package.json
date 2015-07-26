@@ -26,6 +26,7 @@
   "dependencies": {
     "aws-sdk": "^2.1.39",
     "request": "^2.60.0",
+    "slack-notify": "^0.1.4",
     "tripcase": "^0.1.0"
   },
   "bundledDependencies": [

@@ -6,7 +6,13 @@ module.exports = {
   lambdaArn: '',
 
   // A Slack incoming webhook URL for making new posts
-  slackWebhookUrl: ''
+  slackWebhookUrl: '',
+
+  // TripCase login credentials
+  tripcase: {
+    email: '',
+    password: ''
+  }
 
 };
 
