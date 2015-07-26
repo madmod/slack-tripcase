@@ -8,7 +8,6 @@
     "deploy": "grunt deploy"
   },
   "keywords": [
-    "cloudwatch",
     "lambda",
     "aws",
     "tripcase",
@@ -18,19 +17,23 @@
   "repository": "madmod/slack-tripcase",
   "license": "MIT",
   "devDependencies": {
+    "aws-sdk": "^2.1.40",
     "grunt": "^0.4.5",
     "grunt-aws-lambda": "^0.8.0",
     "mocha": "^2.2.5",
-    "npm": "^2.13.0"
+    "npm": "^2.13.2"
   },
   "dependencies": {
-    "aws-sdk": "^2.1.39",
+    "debug": "^2.2.0",
+    "moment": "^2.10.3",
     "request": "^2.60.0",
-    "slack-notify": "^0.1.4",
+    "slack-node": "^0.1.3",
     "tripcase": "^0.1.0"
   },
   "bundledDependencies": [
-    "tripcase",
-    "request"
+    "debug",
+    "request",
+    "slack-node",
+    "tripcase"
   ]
 }
