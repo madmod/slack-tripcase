@@ -2,7 +2,11 @@
 
 module.exports = {
 
-  lambdaArn: ''
+  // The AWS ARN of the lambda function this will deploy to
+  lambdaArn: '',
+
+  // A Slack incoming webhook URL for making new posts
+  slackWebhookUrl: ''
 
 };
 
