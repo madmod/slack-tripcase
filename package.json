@@ -15,18 +15,21 @@
     "slack"
   ],
   "author": "John Wells <madmodmail@gmail.com> (https://github.com/madmod)",
+  "repository": "madmod/slack-tripcase",
   "license": "MIT",
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-aws-lambda": "^0.8.0",
+    "mocha": "^2.2.5",
     "npm": "^2.13.0"
   },
   "dependencies": {
     "aws-sdk": "^2.1.39",
+    "request": "^2.60.0",
     "tripcase": "^0.1.0"
   },
   "bundledDependencies": [
-    "aws-sdk",
-    "tripcase"
+    "tripcase",
+    "request"
   ]
 }
