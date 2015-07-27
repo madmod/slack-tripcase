@@ -5,6 +5,8 @@ var debug = require('debug')('slack-tripcase');
 var config = require('./config.js');
 
 var moment = require('moment');
+// moment-timezone gets added to moment as moment.tz
+var timezone = require('moment-timezone');
 
 var TripCase = require('tripcase');
 var tripcase = new TripCase(config.tripcase);
@@ -17,7 +19,9 @@ slack.setWebhook(config.slack.webhook);
 
 
 exports.handler = function(event, context) {
-  debug('Received event:', JSON.stringify(event, null, 2));
+  console.log('now', moment.tz('GMT').toString());
+
+  console.log('Received event:', JSON.stringify(event, null, 2));
 
   tripcase.login(function (err, res, session) {
     debug('login', session);
@@ -30,10 +34,11 @@ exports.handler = function(event, context) {
       // TODO: Handle no trips
       debug('trip', trip);
 
+      var now = moment.tz(config.timezone);
+      console.log('local now', now.toString());
 
-      var now = moment();
-      var start = moment(trip.start_time);
-      var end = moment(trip.end_time);
+      var start = moment.utc(trip.start_time);
+      var end = moment.utc(trip.end_time);
       var startDelta = start.from(now);
       var endDelta = end.from(now);
 
@@ -42,9 +47,7 @@ exports.handler = function(event, context) {
       // TODO: Test this
       var travelPhrase = now < start.add(22, 'hours') ? ' is leaving for ' : ' arrived in ';
 
-
       var message = trip.traveler_name + travelPhrase + trip.destination +' '+ startDelta +' and will return '+ endDelta +' from now';
-
 
       // TODO: Notify in #general if an event is happening today
 

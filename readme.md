@@ -12,6 +12,10 @@ TODO: Setup instructions
 $ npm install --save slack-tripcase
 ```
 
+## Configuration
+
+Edit the sample configuration in `config.js.sample` and save it as `config.js`.
+For a list of timezone options use `npm run list-timezones`.
 
 ## License
 

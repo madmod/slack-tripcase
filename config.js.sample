@@ -5,13 +5,20 @@ module.exports = {
   // The AWS ARN of the lambda function this will deploy to
   lambdaArn: '',
 
-  // A Slack incoming webhook URL for making new posts
-  slackWebhookUrl: '',
+  // The timezone for TripCase times to be compared with
+  // For a list of supported timezones use "npm run list-timezones"
+  timezone: 'America/Denver',
+
+  slack: {
+    // A Slack incoming webhook URL for making new posts
+    webhook: '',
+    channel: '#travel'
+  },
 
   // TripCase login credentials
   tripcase: {
-    email: '',
-    password: ''
+    email: 'user@example.com',
+    password: 'supersecret'
   }
 
 };

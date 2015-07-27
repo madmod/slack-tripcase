@@ -9,8 +9,8 @@ grunt.loadNpmTasks('grunt-aws-lambda');
 // These AWS Lambda options are loaded from npm config
 // You can set this with `npm config set` or by editing .npmrc
 var lambdaOptions = {
-  region: process.env.npm_config_aws_default_region,
-  profile: process.env.npm_config_aws_default_profile,
+  region: process.env.npm_config_aws_region,
+  profile: process.env.npm_config_aws_profile,
 };
 
 grunt.initConfig({
